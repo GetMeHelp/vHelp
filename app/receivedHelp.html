@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Need Help</title>
 
-  <link rel="stylesheet" href="styles/needHelp.css">
+  <link rel="stylesheet" href="styles/requester.css">
   <link rel="stylesheet" href="styles/header.css">
 
   <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
@@ -38,10 +38,11 @@
   <div class="content-container">
     <div id="map" class="map-area"></div>
     <div class="function-container">
-      <div class="buttons">
-        <div onclick="receivedHelp()">
-          Received Help
-        </div>
+      <div class="gettingHelp-container">
+        <div class="heading">Please provide more details</div>
+        <textarea name="name" class="help-detail" placeholder="e.g. I'm having an asthma attack, please bring inhaler or I'm being followed, need help quickly"></textarea>
+        <!-- <div class="placeholder-text">e.g. I'm having an asthma attack, please bring inhaler or I'm being followed, need help quickly</div> -->
+        <div class="send-detail-button">SEND DETAILS TO HELPER</div>
       </div>
     </div>
   </div>

@@ -23,14 +23,16 @@ function setHelpRequest() {
     lat: 12.9352015,
     lng: 77.53465609999999
   }
-  let userDetails = JSON.parse(localStorage.getItem("userDetails"))
+  let userDetails = JSON.parse(localStorage.getItem('userDetails'))
   navigator.geolocation.getCurrentPosition(function(position) {
-    pos = {
+    let userDetails = JSON.parse(localStorage.getItem('userDetails'))
+    let pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude
     }
     console.log(pos, userDetails);
     firebase.database().ref('requestingUser/').set({position: pos, user: userDetails});
+    window.location.href = 'receivedHelp.html';
   })
 }
 
