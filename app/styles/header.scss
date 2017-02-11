@@ -6,23 +6,21 @@
   left: 0;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   .hamburger-menu {
-    margin-left: 15px;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-45%);
+    display: flex;
+    align-items: center;
     img {
-      height: 20px;
+      height: 25px;
     }
   }
   .title {
-    position: absolute;
-    height: 60px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 24px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
   }
 }
