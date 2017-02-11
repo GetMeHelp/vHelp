@@ -7,7 +7,7 @@
 
 body {
   font-family: OpenSans-Regular, Helvetica, sans-serif;
-  color: #fff;
+  color: #636265;
   background-color: $palette_white;
   margin: 0;
   width: 100vw;
@@ -16,4 +16,15 @@ body {
   min-height: 500px;
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0,0,0);
+  position: relative;
+
+  .content-container {
+    position: absolute;
+    top: 60px;
+    #map {
+      height: 70vh;
+      width: 100vw;
+    }
+  }
+
 }

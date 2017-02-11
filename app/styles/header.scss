@@ -1,17 +1,28 @@
 .header {
-  height: 120px;
+  height: 60px;
   width: 100vw;
   position: fixed;
   top: 0;
   left: 0;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   .hamburger-menu {
-
+    margin-left: 15px;
+    img {
+      height: 20px;
+    }
   }
   .title {
-    font-size: 52px;
+    position: absolute;
+    height: 60px;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
   }
 }

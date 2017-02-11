@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Need Help</title>
 
+  <link rel="stylesheet" href="styles/needHelp.css">
+  <link rel="stylesheet" href="styles/header.css">
+
   <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
   <script src="./scripts/firebase.js"></script>
   <script>
@@ -20,23 +23,29 @@
   };
   firebase.initializeApp(config);
   </script>
-  <style>
-  #map {
-    height: 70vh;
-    width: 100vw;
-  }
-  </style>
 </head>
 
 <body>
+  <!-- header -->
+  <div class="header">
+    <div class="hamburger-menu">
+      <img src="./assets/images/menu.png" alt="">
+    </div>
+    <div class="title">WeHelp</div>
+  </div>
 
-  <div id="map"></div>
-  <div onclick="setHelpRequest()">
-    Need Help
+  <!-- content -->
+  <div class="content-container">
+    <div id="map" class="map-area"></div>
+    <div onclick="setHelpRequest()">
+      Need Help
+    </div>
+    <div onclick="receivedHelp()">
+      Received Help
+    </div>
   </div>
-  <div onclick="receivedHelp()">
-    Received Help
-  </div>
+
+  <!-- Scripts -->
   <script src="./scripts/app.js" async></script>
   <script src="./scripts/maps.js">
   </script>
