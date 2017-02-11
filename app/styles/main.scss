@@ -1,30 +1,27 @@
 // $icon-font-path: '../fonts/';
-
 // @import 'constants.scss';
 // @import 'mixins.scss';
-
 // @include font-face(roboto-regular);
 // @include font-face(OpenSans-Semibold);
 // @include font-face(OpenSans-Regular);
-
 $font-color: #636265;
 $white: #fff;
-
 $palette_red: #E83151;
 $palette_blue: #89D2F9;
 $palette_green: #3F8D16;
 $palette_white: #F9F9F9;
 $palette_grey: #DBD4D3;
 
-html, body {
+body,
+html {
   margin: 0;
   padding: 0;
 }
 
 body {
-  // font-family: OpenSans-Regular, Helvetica, sans-serif;
-  color: $font-color;
-  background-color: $palette_white;
+  font-family: Helvetica, sans-serif;
+  color: #f9f9f9;
+  background-color: transparentize(#E83151, 0.1);
   margin: 0;
   width: 100vw;
   height: 100vh;
@@ -32,6 +29,111 @@ body {
   min-height: 500px;
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0,0,0);
+
+  .home-base {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+
+    .title-icon {
+      position: absolute;
+      top: 18%;
+    }
+
+    .title-home {
+      height: 60px;
+      top: 38%;
+      left: 50%;
+      transform: translateX(-50%);
+      position: absolute;;
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .g-signin2 {
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      .abcRioButton {
+        height: 50px !important;
+        width: 60vw !important;
+        border-radius: 2px;
+        .abcRioButtonIcon {
+          height: inherit;
+          padding: 0 !important;
+          width: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          div {
+            width: 25px !important;
+            height: 25px !important;
+
+            svg {
+              width: 25px !important;
+              height: 25px !important;
+            }
+          }
+        }
+        .abcRioButtonContents {
+          height: inherit;
+          font-size: 20px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
+    .sign-in {
+      pointer-events: none;
+      position: absolute;
+      bottom: 25%;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 3;
+      background-color: #fff;
+      display: flex;
+      flex-flow: row nowrap;
+      border-radius: 2px;
+      .button {
+        height: inherit;
+        padding: 0 !important;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .icon {
+          width: 25px !important;
+          height: 25px !important;
+
+          svg {
+            width: 25px !important;
+            height: 25px !important;
+          }
+        }
+      }
+      .text-container {
+        height: 50px !important;
+        width: 48vw !important;
+        .text {
+          color: #757575;
+          height: inherit;
+          font-size: 20px !important;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+
 }
 
 #map {

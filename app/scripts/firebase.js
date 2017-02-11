@@ -39,4 +39,6 @@ function setHelpRequest() {
 function receivedHelp() {
   console.log('Help Received');
   firebase.database().ref('requestingUser/').set({});
+  window.location.href = 'needHelp.html';
+
 }

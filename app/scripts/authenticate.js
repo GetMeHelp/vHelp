@@ -22,5 +22,5 @@ function onSignIn(googleUser) {
   userDetails.id = profile.getId()
   localStorage.setItem('userDetails', JSON.stringify(userDetails));
 
-  // window.location.href = './needHelp.html';
+  window.location.href = './needHelp.html';
 };

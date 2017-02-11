@@ -36,7 +36,7 @@ body {
     }
 
     .function-container {
-      height: 35vh;
+      height: calc(35vh - 60px);
       width: inherit;
 
       // needHelp screen
@@ -46,8 +46,8 @@ body {
         justify-content: space-around;
 
         .help-button {
-          width: 90px;
-          height: 90px;
+          width: 13vh;
+          height: 13vh;
           background-color: $palette_red;
           margin-top: 80px;
           border-radius: 50%;
@@ -62,17 +62,17 @@ body {
           line-height: 1.2;
 
           &.ambulance-button img {
-            width: 60px;
+            width: 70%;
           }
 
           &.police-button img {
-            width: 70px;
+            width: 75%;
           }
 
           &.helpMe-button {
             margin-top: 20px;
-            width: 130px;
-            height: 130px;
+            width: 18vh;
+            height: 18vh;
           }
         }
       }
@@ -121,17 +121,29 @@ body {
           color: transparentize(#565656, 0.5);
         }
 
-        .send-detail-button {
-          margin: 10px 0;
-          height: 50px;
-          border-radius: 2px;
-          width: calc(100% - 40px);
-          color: $palette_white;
-          background-color: $palette_red;
+        .detail-buttons {
           display: flex;
-          justify-content: center;
-          align-items: center;
-          box-shadow: 0 3px 3px 0 #bbb;
+          flex-flow: row nowrap;
+          justify-content: space-between;
+          width: calc(100% - 40px);
+          .send-detail-button, .got-help-button {
+            margin: 10px 5px 10px 0;
+            height: 50px;
+            border-radius: 2px;
+            color: $palette_white;
+            width: 70%;
+            background-color: $palette_red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 3px 3px 0 #bbb;
+          }
+
+          .got-help-button {
+            margin: 10px 0;
+            width: 30%;
+            background-color: #3F8D16;
+          }
         }
       }
 
