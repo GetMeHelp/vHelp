@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-signin-client_id" content="330165145141-aj6hi4mrdb3ea87t038caaguu0eqj1s2.apps.googleusercontent.com">
   <title>pwa</title>
   <link rel="stylesheet" type="text/css" href="./styles/style.css">
 
@@ -20,8 +21,12 @@
 <body>
 
   <h1 class="header__title">My first pwa</h1>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 
+
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <script src="./scripts/jquery-3.1.1.min.js"></script>
+  <script src="./scripts/authenticate.js"></script>
   <script src="./scripts/app.js" async></script>
-
 </body>
 </html>
