@@ -22,8 +22,48 @@ body {
     position: absolute;
     top: 60px;
     #map {
-      height: 70vh;
+      height: 65vh;
       width: 100vw;
+    }
+
+    .function-container {
+      height: 35vh;
+      .buttons {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-around;
+        .help-button {
+          width: 90px;
+          height: 90px;
+          background-color: $palette_red;
+          margin-top: 80px;
+          border-radius: 50%;
+          box-shadow: 0 5px 4px 0px #999;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          color: $palette_white;
+          font-size: 26px;
+          font-weight: bolder;
+          line-height: 1.2;
+
+          &.ambulance-button img {
+            width: 60px;
+          }
+
+          &.police-button img {
+            width: 70px;
+          }
+
+          &.helpMe-button {
+            margin-top: 20px;
+            width: 130px;
+            height: 130px;
+          }
+        }
+
+      }
     }
   }
 
