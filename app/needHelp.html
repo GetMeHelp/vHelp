@@ -13,24 +13,25 @@
   <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
   <script src="./scripts/firebase.js"></script>
   <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDDGSn7kYD5PB8J8Ui3ZPJVEFRIdIL61vA",
-    authDomain: "wehelp-1486785287426.firebaseapp.com",
-    databaseURL: "https://wehelp-1486785287426.firebaseio.com",
-    storageBucket: "wehelp-1486785287426.appspot.com",
-    messagingSenderId: "980853103197"
-  };
-  firebase.initializeApp(config);
-  var requestingUser = firebase.database().ref('requestingUser/');
-  requestingUser.on('value', function(user) {
-    console.log('New request', user.val());
-    if(user.val()) {
-      localStorage.setItem("requesterDetail", JSON.stringify(user.val()));
-      window.location.href = './helpRequester.html';
-    }
-  });
-
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDDGSn7kYD5PB8J8Ui3ZPJVEFRIdIL61vA",
+      authDomain: "wehelp-1486785287426.firebaseapp.com",
+      databaseURL: "https://wehelp-1486785287426.firebaseio.com",
+      storageBucket: "wehelp-1486785287426.appspot.com",
+      messagingSenderId: "980853103197"
+    };
+    firebase.initializeApp(config);
+    var requestingUser = firebase.database().ref('requestingUser/');
+    requestingUser.on('value', function(user) {
+      console.log('New request', user.val());
+      if (user.val()) {
+        if (user.val().user.id != (JSON.parse(localStorage.getItem("userDetails")).id || 0)) {
+          localStorage.setItem("requesterDetail", JSON.stringify(user.val()));
+          window.location.href = './helpRequester.html';
+        }
+      }
+    });
   </script>
 </head>
 
