@@ -1,9 +1,3 @@
-// $icon-font-path: '../fonts/';
-// @import 'constants.scss';
-// @import 'mixins.scss';
-// @include font-face(roboto-regular);
-// @include font-face(OpenSans-Semibold);
-// @include font-face(OpenSans-Regular);
 $font-color: #636265;
 $white: #fff;
 $palette_red: #E83151;
@@ -131,6 +125,11 @@ body {
           align-items: center;
         }
       }
+    }
+
+    .next {
+      position: absolute;
+      bottom: 20%;
     }
   }
 
