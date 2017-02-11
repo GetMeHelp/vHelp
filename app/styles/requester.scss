@@ -1,5 +1,3 @@
-$icon-font-path: '../fonts/';
-
 @import 'constants.scss';
 @import 'mixins.scss';
 
@@ -7,14 +5,9 @@ $icon-font-path: '../fonts/';
 @include font-face(OpenSans-Semibold);
 @include font-face(OpenSans-Regular);
 
-html, body {
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family: OpenSans-Regular, Helvetica, sans-serif;
-  color: #636265;
+  color: #fff;
   background-color: $palette_white;
   margin: 0;
   width: 100vw;
@@ -23,9 +16,4 @@ body {
   min-height: 500px;
   -webkit-tap-highlight-color: transparent;
   transform: translate3d(0,0,0);
-}
-
-#map {
-  height: 70vh;
-  width: 100vw;
 }
