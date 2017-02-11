@@ -1,18 +1,4 @@
-function firebaseInitialize() {
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyDDGSn7kYD5PB8J8Ui3ZPJVEFRIdIL61vA",
-    authDomain: "wehelp-1486785287426.firebaseapp.com",
-    databaseURL: "https://wehelp-1486785287426.firebaseio.com",
-    storageBucket: "wehelp-1486785287426.appspot.com",
-    messagingSenderId: "980853103197"
-  };
-  firebase.initializeApp(config);
-}
-
 function setFirebaseData(userId, userDetails) {
-
-  firebaseInitialize()
   // Get a reference to the database service
   var database = firebase.database();
 
@@ -21,19 +7,18 @@ function setFirebaseData(userId, userDetails) {
     firebase.database().ref('users/' + userId).set(userDetails);
   }
 
-  // Read data from Firebase
-  var requestingUser = firebase.database().ref('/requestingUser');
-  requestingUser.on('value', function(snapshot) {
-    updateStarCount(postElement, snapshot.val());
-  });
+  // // Read data from Firebase
+  // var requestingUser = firebase.database().ref('/requestingUser');
+  // requestingUser.on('value', function(snapshot) {
+  //   updateStarCount(postElement, snapshot.val());
+  // });
 
   writeUserData(userId, userDetails)
   console.log('User Added');
 }
 
 function setHelpRequest() {
-  firebaseInitialize()
-  console.log('send request');
+  console.log('Request Help');
   navigator.geolocation.getCurrentPosition(function(position) {
     let userDetails = JSON.parse(localStorage.getItem("userDetails"))
     let pos = {
@@ -45,4 +30,9 @@ function setHelpRequest() {
       user: userDetails
     });
   })
+}
+
+function receivedHelp() {
+  console.log('Help Received');
+  firebase.database().ref('requestingUser/').set({});
 }
