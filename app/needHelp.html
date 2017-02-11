@@ -22,6 +22,15 @@
     messagingSenderId: "980853103197"
   };
   firebase.initializeApp(config);
+  var requestingUser = firebase.database().ref('requestingUser/');
+  requestingUser.on('value', function(user) {
+    console.log('New request', user.val());
+    if(user.val()) {
+      localStorage.setItem("requesterDetail", JSON.stringify(user.val()));
+      window.location.href = './helpRequester.html';
+    }
+  });
+
   </script>
 </head>
 
