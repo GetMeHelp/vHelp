@@ -1,11 +1,20 @@
-$icon-font-path: '../fonts/';
+// $icon-font-path: '../fonts/';
 
-@import 'constants.scss';
-@import 'mixins.scss';
+// @import 'constants.scss';
+// @import 'mixins.scss';
 
 // @include font-face(roboto-regular);
 // @include font-face(OpenSans-Semibold);
 // @include font-face(OpenSans-Regular);
+
+$font-color: #636265;
+$white: #fff;
+
+$palette_red: #E83151;
+$palette_blue: #89D2F9;
+$palette_green: #3F8D16;
+$palette_white: #F9F9F9;
+$palette_grey: #DBD4D3;
 
 html, body {
   margin: 0;
