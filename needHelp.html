@@ -1,0 +1,19 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Need Help</title><link rel="stylesheet" href="styles/requester.css"><link rel="stylesheet" href="styles/header.css"><script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script><script src="./scripts/firebase.js"></script><script>// Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDDGSn7kYD5PB8J8Ui3ZPJVEFRIdIL61vA",
+      authDomain: "wehelp-1486785287426.firebaseapp.com",
+      databaseURL: "https://wehelp-1486785287426.firebaseio.com",
+      storageBucket: "wehelp-1486785287426.appspot.com",
+      messagingSenderId: "980853103197"
+    };
+    firebase.initializeApp(config);
+    var requestingUser = firebase.database().ref('requestingUser/');
+    requestingUser.on('value', function(user) {
+      console.log('New request', user.val());
+      if (user.val()) {
+        if (user.val().user.id != (JSON.parse(localStorage.getItem("userDetails")).id || 0)) {
+          localStorage.setItem("requesterDetail", JSON.stringify(user.val()));
+          window.location.href = './helpRequester.html';
+        }
+      }
+    });</script></head><body><!-- header --><div class="header"><div class="hamburger-menu"><img src="./assets/images/menu.png" alt=""></div><div class="title">WeHelp</div></div><!-- content --><div class="content-container"><div id="map" class="map-area"></div><div class="function-container"><div class="buttons"><div class="help-button ambulance-button"><img src="./assets/images/ambulance.png" alt=""></div><div onclick="setHelpRequest()" class="help-button helpMe-button">HELP<br>ME</div><div class="help-button police-button"><img src="./assets/images/police.png" alt=""></div></div></div></div><!-- Scripts --><script src="./scripts/app.js" async></script><script src="./scripts/maps.js"></script><script async defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDcAR3h-TfLc5Q9VrcnbhEGwsYQpy0E6Mo&callback=initMap"></script></body></html>
