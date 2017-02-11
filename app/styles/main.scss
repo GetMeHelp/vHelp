@@ -3,9 +3,9 @@ $icon-font-path: '../fonts/';
 @import 'constants.scss';
 @import 'mixins.scss';
 
-@include font-face(roboto-regular);
-@include font-face(OpenSans-Semibold);
-@include font-face(OpenSans-Regular);
+// @include font-face(roboto-regular);
+// @include font-face(OpenSans-Semibold);
+// @include font-face(OpenSans-Regular);
 
 html, body {
   margin: 0;
@@ -13,7 +13,7 @@ html, body {
 }
 
 body {
-  font-family: OpenSans-Regular, Helvetica, sans-serif;
+  // font-family: OpenSans-Regular, Helvetica, sans-serif;
   color: $font-color;
   background-color: $palette_white;
   margin: 0;

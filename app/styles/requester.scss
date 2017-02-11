@@ -1,12 +1,12 @@
 @import 'constants.scss';
 @import 'mixins.scss';
 
-@include font-face(roboto-regular);
-@include font-face(OpenSans-Semibold);
-@include font-face(OpenSans-Regular);
+// @include font-face(roboto-regular);
+// @include font-face(OpenSans-Semibold);
+// @include font-face(OpenSans-Regular);
 
 body {
-  font-family: OpenSans-Regular, Helvetica, sans-serif;
+  font-family: Helvetica, sans-serif;
   color: $font-color;
   background-color: $palette_white;
   margin: 0;
@@ -30,7 +30,7 @@ body {
       height: 35vh;
       width: inherit;
 
-      // screen 1
+      // needHelp screen
       .buttons {
         display: flex;
         flex-flow: row nowrap;
@@ -68,7 +68,7 @@ body {
         }
       }
 
-      // screen 2
+      // receivedHelp screen
       .gettingHelp-container {
         width: inherit;
         display: flex;
@@ -122,6 +122,86 @@ body {
           display: flex;
           justify-content: center;
           align-items: center;
+          box-shadow: 0 3px 3px 0 #bbb;
+        }
+      }
+
+      // helpRequester screen
+      .help-request-container {
+        display: flex;
+        height: 35vh;
+        width: 100%;
+        flex-flow: column nowrap;
+        margin: 0 auto;
+        .requester-details {
+          margin: 20px auto;
+          width: calc(100% - 40px);
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+
+          .image {
+            height: 80px;
+            width: 80px;
+            img {
+              width: inherit;
+            }
+          }
+
+          .requester {
+            margin-left: 15px;
+
+            .text {
+              color: #636265;
+              font-size: 18px;
+              margin: 10px 0;
+              line-height: 1;
+              font-weight: bold;
+            }
+            .name {
+              font-size: 28px;
+            }
+          }
+        }
+
+        .help-options {
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          width: 100%;
+          height: 80px;
+          display: flex;
+          flex-flow: row nowrap;
+
+          .button {
+            height: inherit;
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 30px;
+              height: 30px;
+            }
+          }
+          .accept {
+            width: 80%;
+            background-color: #3F8D16;
+            color: #F9F9F9;
+            span {
+              font-size: 28px;
+              font-weight: bold;
+              margin-right: 20px;
+            }
+            img {
+              width: 40px;
+              height: 40px;
+            }
+          }
+          .reject {
+            width: 20%;
+            background-color: #E83151;
+          }
         }
       }
     }
