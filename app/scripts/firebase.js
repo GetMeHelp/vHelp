@@ -19,12 +19,17 @@ function setFirebaseData(userId, userDetails) {
 
 function setHelpRequest() {
   console.log('Request Help');
+  let pos = {
+    lat: 12.9352015,
+    lng: 77.53465609999999
+  }
+  let userDetails = JSON.parse(localStorage.getItem("userDetails"))
   navigator.geolocation.getCurrentPosition(function(position) {
-    let userDetails = JSON.parse(localStorage.getItem("userDetails"))
-    let pos = {
+    pos = {
       lat: position.coords.latitude,
       lng: position.coords.longitude
     }
+    console.log(pos, userDetails);
     firebase.database().ref('requestingUser/').set({position: pos, user: userDetails});
   })
 }
